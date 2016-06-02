@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: SECURED-SERVICE
+server:
+  port: 8083
+eureka:
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}-${random.number}
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:1111}/eureka/

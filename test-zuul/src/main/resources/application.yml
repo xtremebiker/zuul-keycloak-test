@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ZUUL
+server:
+  port: 8765
+eureka:
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}-${random.number}
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:1111}/eureka/
