@@ -2,10 +2,13 @@
 eureka:
   instance:
     hostname: localhost
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
   client:  # Not a client, don't register with yourself
     registerWithEureka: false
     fetchRegistry: false
   server:
     enable-self-preservation: false
 server:
+  address: localhost
   port: 1111   # HTTP (Tomcat) port
