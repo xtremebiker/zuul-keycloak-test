@@ -3,11 +3,16 @@ spring:
     name: SECURED-SERVICE
 server:
   port: 8083
+  address: 127.0.0.1
 eureka:
   instance:
     metadataMap:
       instanceId: ${spring.application.name}-${random.number}
+    ip-address: 127.0.0.1
+    hostname: localhost
+    prefer-ip-address: false
   client:
     enabled: true
     serviceUrl:
       defaultZone: http://${eureka.host:localhost}:${eureka.port:1111}/eureka/
+    use-dns-for-fetching-service-urls: false
